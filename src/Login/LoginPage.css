@@ -1,0 +1,80 @@
+.form-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(63, 103, 129);
+  padding: 20px;
+}
+
+form {
+  border: 2px solid whitesmoke;
+  border-radius: 1rem;
+  padding: 20px;
+  width: 300px;
+  height: 490px;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  align-items: center;
+  justify-content: center;
+}
+
+input {
+  height: 30px;
+  border: 0.5px solid rgb(63, 103, 129);
+  border-radius: 0.5rem;
+  width: 250px;
+  transition: 0.5s;
+}
+input:focus {
+  border: 1px solid rgb(63, 103, 129);
+  transform: scale(1.05);
+}
+.error {
+  color: rgb(248, 110, 92);
+  text-transform: uppercase;
+  font-size: 10px;
+}
+
+button {
+  height: 40px;
+  border-radius: 0.5rem;
+  width: 100px;
+  background-color: white;
+}
+.login-btn {
+  border: 1px solid rgb(76, 240, 158);
+  color: rgb(76, 240, 158);
+  background-color: white;
+}
+.login-btn:hover {
+  background-color: rgb(76, 240, 158);
+  color: white;
+}
+.signup-btn {
+  border: 1px solid rgb(88, 178, 238);
+  color: rgb(88, 178, 238);
+  background-color: white;
+}
+.signup-btn:hover {
+  background-color: rgb(88, 178, 238);
+  color: white;
+}
+
+.display-flex {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  gap: 10px;
+}
+.flex-gap {
+  gap: 30px;
+}
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+.form-text {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: whitesmoke;
+}
