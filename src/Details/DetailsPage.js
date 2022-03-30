@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import Chart from './Chart';
 import moment from 'moment';
 import './DetailsPage.css';
+import { Banner, Chart } from '../Components';
 export default function DetailsPage() {
   const [data, setData] = useState(null);
-
+  const [mfData, setMFData] = useState();
   useEffect(() => {
     const fetchfunc = async () => {
       let resp = await axios.get('https://api.mfapi.in/mf/100350');
@@ -22,33 +22,32 @@ export default function DetailsPage() {
         });
         setData([...temp].reverse());
         console.log(temp);
+        setMFData({ ...data.meta });
       }
     };
 
     fetchfunc();
     // console.log(data);
   }, []);
+
   return (
     <div className="details-container">
-      <h2>Mutual Fund Details</h2>
+      <Banner text="Mutual Fund Details" />
       <div className="container">
         <div className="sub-container title">scheme name</div>
-        <div>
-          ICICI Prudential Large & Mid Cap Fund - Institutional Option - I -
-          Growth
-        </div>
+        <div>{mfData && mfData.scheme_name}</div>
       </div>
       <div className="container">
         <div className="sub-container title">scheme type</div>
-        <div>Open Ended Schemes</div>
+        <div>{mfData && mfData.scheme_type}</div>
       </div>
       <div className="container">
         <div className="sub-container title">scheme code</div>
-        <div>100350</div>
+        <div>{mfData && mfData.scheme_code}</div>
       </div>
       <div className="container">
         <div className="sub-container title">fund house</div>
-        <div>ICICI Prudential Mutual Fund</div>
+        <div>{mfData && mfData.fund_house}</div>
       </div>
       <div className="container">
         <Chart data={data} />

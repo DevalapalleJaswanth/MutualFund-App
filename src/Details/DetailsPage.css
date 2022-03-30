@@ -10,6 +10,7 @@
   border-radius: 0.5rem;
   padding: 10px;
   border-left: 5px solid rgb(63, 103, 129);
+  border-right: 5px solid rgb(63, 103, 129);
 }
 .title {
   font-size: 10px;
