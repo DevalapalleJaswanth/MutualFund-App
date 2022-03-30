@@ -1,3 +1,4 @@
 import UserActions from './UserActions';
 import MutualFundActions from './MutualFundActions';
-export const allActions = { UserActions, MutualFundActions };
+const allActions = { UserActions, MutualFundActions };
+export default allActions;

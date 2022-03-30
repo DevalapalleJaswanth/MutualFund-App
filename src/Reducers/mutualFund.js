@@ -1,4 +1,4 @@
-const mutualFundReducer = (state = [], action) => {
+const mutualFund = (state = [], action) => {
   switch (action.type) {
     case 'ADD':
       return [...state, { ...action.payload }];
@@ -8,4 +8,4 @@ const mutualFundReducer = (state = [], action) => {
   }
 };
 
-export default mutualFundReducer;
+export default mutualFund;

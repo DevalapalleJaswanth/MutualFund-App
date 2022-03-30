@@ -1,10 +1,10 @@
-import UserReducer from './UserReducer';
-import mutualFundReducer from './mutualFundReducer';
+import User from './User';
+import mutualFund from './mutualFund';
 import { combineReducers } from 'redux';
 
 const rootReducer = combineReducers({
-  UserReducer,
-  mutualFundReducer,
+  User,
+  mutualFund,
 });
 
 export default rootReducer;
