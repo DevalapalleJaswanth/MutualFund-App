@@ -75,11 +75,11 @@ button {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   color: whitesmoke;
 }
-@media (max-width: 500px) {
+/* @media (max-width: 500px) {
   form {
     width: 300px;
   }
   .form-container {
-    width: 330px;
+    width: 340px;
   }
-}
+} */

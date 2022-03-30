@@ -53,7 +53,7 @@ export default function Profile() {
     }
   };
   return (
-    <>
+    <div>
       <button
         className="back-button "
         onClick={() => {
@@ -159,6 +159,6 @@ export default function Profile() {
           </form>
         </div>
       </div>
-    </>
+    </div>
   );
 }
