@@ -29,3 +29,8 @@
   background-color: rgb(216, 248, 244);
   border-radius: 0.5rem;
 }
+@media (max-width: 500px) {
+  .card-container {
+    width: 300px;
+  }
+}
