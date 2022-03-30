@@ -78,6 +78,7 @@ export default function LoginPage() {
               type="text"
               id="DOB"
               name="DOB"
+              placeholder="DD/MM/YYYY"
               onChange={(e) => {
                 handleChange(e);
               }}
