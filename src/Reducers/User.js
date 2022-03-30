@@ -1,7 +1,7 @@
 const User = (state = [], action) => {
   switch (action.type) {
     case 'CREATE':
-      return [...state, { ...action.payload }];
+      return [...state, { id: state.length, ...action.payload }];
     case 'UPDATE':
       return [...action.payload];
     default:

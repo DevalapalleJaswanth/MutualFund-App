@@ -59,7 +59,11 @@ export default function HomePage() {
         <div className="profile-menu">
           <div
             onClick={() => {
-              navigate('/ProfilePage', { state: { user: state.user } });
+              navigate('/ProfilePage', {
+                state: {
+                  user: user.length > 0 ? user[state.user.id] : state.user,
+                },
+              });
             }}
           >
             Profile
