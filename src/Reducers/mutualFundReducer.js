@@ -1,6 +1,6 @@
 const mutualFundReducer = (state = [], action) => {
   switch (action.type) {
-    case 'SET_DATA':
+    case 'ADD':
       return [...state, { ...action.payload }];
 
     default:
