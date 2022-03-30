@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import Chart from './Chart';
 import moment from 'moment';
+import './DetailsPage.css';
 export default function DetailsPage() {
   const [data, setData] = useState(null);
 
@@ -28,28 +29,30 @@ export default function DetailsPage() {
     // console.log(data);
   }, []);
   return (
-    <div>
-      <div>
-        <div>scheme name</div>
+    <div className="details-container">
+      <h2>Mutual Fund Details</h2>
+      <div className="container">
+        <div className="sub-container title">scheme name</div>
         <div>
           ICICI Prudential Large & Mid Cap Fund - Institutional Option - I -
           Growth
         </div>
       </div>
-      <div>
-        <div>scheme type</div>
+      <div className="container">
+        <div className="sub-container title">scheme type</div>
         <div>Open Ended Schemes</div>
       </div>
-      <div>
-        <div>scheme code</div>
+      <div className="container">
+        <div className="sub-container title">scheme code</div>
         <div>100350</div>
       </div>
-      <div>
-        <div>fund house</div>
+      <div className="container">
+        <div className="sub-container title">fund house</div>
         <div>ICICI Prudential Mutual Fund</div>
       </div>
-      {console.log(data)}
-      <Chart data={data} />
+      <div className="container">
+        <Chart data={data} />
+      </div>
     </div>
   );
 }

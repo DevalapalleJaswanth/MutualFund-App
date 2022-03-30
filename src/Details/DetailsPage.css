@@ -1,0 +1,19 @@
+.details-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background-color: rgb(248, 247, 247);
+}
+.container {
+  border: 1px solid rgb(190, 190, 190);
+  background-color: rgb(255, 255, 255);
+  border-radius: 0.5rem;
+  padding: 10px;
+  border-left: 5px solid rgb(63, 103, 129);
+}
+.title {
+  font-size: 10px;
+  font-weight: 400;
+  color: brown;
+  text-transform: capitalize;
+}
