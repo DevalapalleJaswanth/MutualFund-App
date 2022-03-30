@@ -1,3 +1,4 @@
 import Banner from './Banner.js';
 import Chart from './Chart.js';
-export { Banner, Chart };
+import Card from './Card.js';
+export { Banner, Chart, Card };

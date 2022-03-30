@@ -3,6 +3,7 @@ import './style.css';
 import LoginPage from './Login';
 import SignUp from './SignUp';
 import DetailsPage from './Details';
+import HomePage from './Home';
 import allActions from './Actions';
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
@@ -39,14 +40,11 @@ export default function App() {
   }, []);
   return (
     <div className="App">
-      {/* <LoginPage /> */}
-      {/* <SignUp /> */}
-      {console.log(mutualFund)}
-      <DetailsPage />
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<LoginPage />} />
+          <Route path="/Login" element={<LoginPage />} />
           <Route path="/SignUp" element={<SignUp />} />
+          <Route path="/" element={<HomePage />} />
           <Route path="/DetailsPage:id" element={<DetailsPage />} />
         </Routes>
       </BrowserRouter>

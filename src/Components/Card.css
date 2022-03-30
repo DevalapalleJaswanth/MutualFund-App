@@ -1,0 +1,27 @@
+.card-container {
+  margin: 10px;
+  border: 1px solid rgb(190, 190, 190);
+  background-color: rgb(255, 255, 255);
+  border-radius: 0.5rem;
+  padding: 10px;
+  border-left: 5px solid rgb(63, 103, 129);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+.card-title {
+  font-size: 10px;
+  text-transform: capitalize;
+  color: brown;
+}
+.growth-container {
+  color: rgb(8, 124, 109);
+  border: 1px solid rgb(142, 247, 233);
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 20px;
+  background-color: rgb(216, 248, 244);
+  border-radius: 0.5rem;
+}
