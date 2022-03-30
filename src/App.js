@@ -4,6 +4,7 @@ import LoginPage from './Login';
 import SignUp from './SignUp';
 import DetailsPage from './Details';
 import HomePage from './Home';
+import Profile from './Profile';
 import allActions from './Actions';
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
@@ -46,6 +47,7 @@ export default function App() {
           <Route path="/SignUp" element={<SignUp />} />
           <Route path="/HomePage" element={<HomePage />} />
           <Route path="/HomePage/DetailsPage/:id" element={<DetailsPage />} />
+          <Route path="/Profile" element={<Profile />} />
         </Routes>
       </BrowserRouter>
     </div>
