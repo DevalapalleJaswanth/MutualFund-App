@@ -18,7 +18,7 @@ export default function DetailsPage() {
         })
       : '';
 
-  console.log(mutualFund, mfDetails, id);
+  //console.log(mutualFund, mfDetails, id);
   return (
     <div className="details-container">
       <button

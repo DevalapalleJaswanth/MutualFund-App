@@ -7,9 +7,9 @@ export default function Profile() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const { state } = useLocation();
-  console.log(state);
+  //console.log(state);
   const User = useSelector((state) => state.User);
-  console.log(User);
+  //console.log(User);
   const [user, setUser] = useState({
     name: state.user ? state.user.name : '',
     gender: state.user ? state.user.gender : '',
@@ -37,7 +37,7 @@ export default function Profile() {
     if (errKeys.length >= 1) {
       alert('Please fill all fields');
     } else {
-      console.log(user, error);
+      //console.log(user, error);
       let data = User
         ? User.map((ele) => {
             if (ele.id === state.user.id) {
@@ -47,7 +47,7 @@ export default function Profile() {
             }
           })
         : '';
-      console.log(data);
+      //console.log(data);
       dispatch(allActions.UserActions.updateUser(data));
       navigate(-1);
     }
