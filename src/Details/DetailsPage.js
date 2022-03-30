@@ -1,16 +1,31 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import Chart from './Chart';
+import moment from 'moment';
 export default function DetailsPage() {
-  const [data, setData] = useState();
-  useEffect(async () => {
-    let response = await axios.get(
-      'https://demo-live-data.highcharts.com/aapl-c.json'
-    );
-    let plotData = await response.data;
+  const [data, setData] = useState(null);
 
-    setData([...plotData]);
-    console.log(data);
+  useEffect(() => {
+    const fetchfunc = async () => {
+      let resp = await axios.get('https://api.mfapi.in/mf/100350');
+      let data = await resp.data;
+
+      console.log(data.data);
+      if (data && data.data.length > 0) {
+        let temp = data.data.map((ele, i) => {
+          let pair = Object.values(ele);
+          pair[0] = Number(moment(pair[0], 'DD-MM-YYYY').format('x'));
+          pair[1] = Number(pair[1]);
+          //console.log(pair, date);
+          return pair;
+        });
+        setData([...temp].reverse());
+        console.log(temp);
+      }
+    };
+
+    fetchfunc();
+    // console.log(data);
   }, []);
   return (
     <div>
