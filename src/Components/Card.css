@@ -9,6 +9,10 @@
   align-items: center;
   justify-content: space-between;
   gap: 20px;
+  transition: 0.8s;
+}
+.card-container:hover {
+  transform: scale(1.02);
 }
 .card-title {
   font-size: 10px;

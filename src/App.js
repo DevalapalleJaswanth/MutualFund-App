@@ -42,10 +42,10 @@ export default function App() {
     <div className="App">
       <BrowserRouter>
         <Routes>
-          <Route path="/Login" element={<LoginPage />} />
+          <Route path="/" element={<LoginPage />} />
           <Route path="/SignUp" element={<SignUp />} />
-          <Route path="/" element={<HomePage />} />
-          <Route path="/DetailsPage:id" element={<DetailsPage />} />
+          <Route path="/HomePage" element={<HomePage />} />
+          <Route path="/DetailsPage/:id" element={<DetailsPage />} />
         </Routes>
       </BrowserRouter>
     </div>

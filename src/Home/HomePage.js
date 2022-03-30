@@ -13,7 +13,7 @@ export default function HomePage() {
       <Banner text="Mutual Fund Investor" />
       {mutualFund &&
         mutualFund.map((ele, i) => (
-          <Link to={`./DetailsPage:${ele.meta.scheme_code}`} className="Link">
+          <Link to={`./DetailsPage/${ele.meta.scheme_code}`} className="Link">
             <Card ele={ele} key={i} />
           </Link>
         ))}

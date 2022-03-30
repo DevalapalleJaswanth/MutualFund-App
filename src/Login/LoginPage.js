@@ -1,6 +1,12 @@
 import React, { useState } from 'react';
 import './LoginPage.css';
+import { useSelector, useDispatch } from 'react-redux';
+import allActions from '../Actions';
+import { useNavigate } from 'react-router-dom';
 export default function LoginPage() {
+  const navigate = useNavigate();
+  const User = useSelector((state) => state.User);
+  //console.log(User);
   const [user, setUser] = useState({
     name: '',
     password: '',
@@ -24,7 +30,21 @@ export default function LoginPage() {
     if (errKeys.length >= 1) {
       alert('Please fill all fields');
     } else {
-      console.log(user, error);
+      let check =
+        User.length > 0
+          ? User.filter((ele) => {
+              if (user.name === ele.name && ele.password === user.password) {
+                return ele;
+              }
+            })
+          : '';
+      //console.log(User, user);
+      if (check.length > 0) {
+        //console.log(user, error);
+        navigate('/HomePage', { state: { user: check[0] } });
+      } else {
+        alert('user name or password are not correct');
+      }
     }
   };
   return (
@@ -71,7 +91,14 @@ export default function LoginPage() {
       </div>
       <div className="display-flex">
         <div>New User?</div>
-        <button className="signup-btn">SignUp</button>
+        <button
+          className="signup-btn"
+          onClick={() => {
+            navigate('/SignUp');
+          }}
+        >
+          SignUp
+        </button>
       </div>
     </div>
   );

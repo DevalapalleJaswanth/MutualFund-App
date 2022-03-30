@@ -1,6 +1,11 @@
 import React, { useState } from 'react';
 import './SignUp.css';
+import { useSelector, useDispatch } from 'react-redux';
+import allActions from '../Actions';
+import { useNavigate } from 'react-router-dom';
 export default function LoginPage() {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
   const [user, setUser] = useState({
     name: '',
     gender: '',
@@ -27,7 +32,9 @@ export default function LoginPage() {
     if (errKeys.length >= 1) {
       alert('Please fill all fields');
     } else {
-      console.log(user, error);
+      //console.log(user, error);
+      dispatch(allActions.UserActions.createUser(user));
+      navigate(-1);
     }
   };
   return (

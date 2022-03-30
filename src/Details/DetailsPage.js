@@ -1,27 +1,34 @@
 import React, { useEffect, useState } from 'react';
-import axios from 'axios';
-import moment from 'moment';
 import './DetailsPage.css';
 import { Banner, Chart } from '../Components';
 import { useSelector, useDispatch } from 'react-redux';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 export default function DetailsPage() {
   const [data, setData] = useState(null);
   const [mfData, setMFData] = useState();
-  const dispatch = useDispatch();
+  const navigate = useNavigate();
   const mutualFund = useSelector((state) => state.mutualFund);
   const { id } = useParams();
   let mfDetails =
-    mutualFund && id
+    mutualFund.length && id
       ? mutualFund.filter((ele, i) => {
-          if (ele.meta.scheme_code === id) {
+          if (ele.meta.scheme_code == id) {
             return ele;
           }
         })
       : '';
 
+  console.log(mutualFund, mfDetails, id);
   return (
     <div className="details-container">
+      <button
+        onClick={() => {
+          navigate(-1);
+        }}
+        className="back-button"
+      >
+        Back
+      </button>
       <Banner text="Mutual Fund Details" />
       <div className="container">
         <div className="sub-container title">scheme name</div>
